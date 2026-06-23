@@ -1,1 +1,23 @@
-<p>cadastro-tarefa works!</p>
+<div class="cadastro-tarefa"> <!-- Container do formulário -->
+
+  <h3>Adicionar Tarefa</h3> <!-- Título -->
+
+  <form [formGroup]="tarefaForm" (ngSubmit)="adicionarTarefa()"> <!-- Formulário reativo -->
+
+    <input
+      type="text"
+      placeholder="Título da tarefa"
+      formControlName="titulo"> <!-- Campo título -->
+
+    <input
+      type="text"
+      placeholder="Descrição da tarefa"
+      formControlName="descricao"> <!-- Campo descrição -->
+
+    <button type="submit" [disabled]="tarefaForm.invalid"> <!-- Botão desativado se inválido -->
+      Adicionar
+    </button>
+
+  </form>
+
+</div>
