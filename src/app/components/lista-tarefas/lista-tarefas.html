@@ -1,1 +1,23 @@
-<p>lista-tarefas works!</p>
+<div class="lista-tarefas"> <!-- container da lista -->
+
+  <h3>Minhas Tarefas</h3> <!-- Título -->
+
+  <p *ngIf="tarefas.length === 0"> <!-- ngIf caso não tenha tarefas -->
+    Nenhuma tarefa cadastrada
+  </p>
+
+  <ul> <!-- Lista de tarefas -->
+
+    <li *ngFor="let tarefa of tarefas"> <!-- ngFor percorre a lista -->
+
+      <strong>{{ tarefa.titulo }}</strong> <!-- mostra título -->
+
+      <p>{{ tarefa.descricao }}</p> <!-- mostra descrição -->
+
+      <span *ngIf="tarefa.concluida">Concluída</span> <!-- mostra status -->
+
+    </li>
+
+  </ul>
+
+</div>
