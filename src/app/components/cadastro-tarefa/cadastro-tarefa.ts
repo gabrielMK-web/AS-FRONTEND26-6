@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'; // Importa o decorator de componente Angular
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'; // Importa ferramentas de formulário reativo
+import { Tarefa } from '../../services/tarefa';
 
 @Component({
   selector: 'app-cadastro-tarefa', // Tag HTML do componente
@@ -12,7 +13,7 @@ export class CadastroTarefa {
 
   tarefaForm: FormGroup; // Cria o formulário da tarefa
 
-  constructor(private fb: FormBuilder) { // Injeta o FormBuilder para criar formulários
+  constructor(private fb: FormBuilder, private tarefa: Tarefa) { // Injeta o FormBuilder para criar formulários
 
     this.tarefaForm = this.fb.group({ // Cria o formulário com campos
       titulo: ['', Validators.required], // Campo título obrigatório
@@ -21,16 +22,11 @@ export class CadastroTarefa {
 
   }
 
-  adicionarTarefa() { // Função chamada ao enviar o formulário
+  adicionarTarefa() {
 
-    if (this.tarefaForm.valid) { // Verifica se o formulário está válido
-
-      console.log(this.tarefaForm.value); // Mostra os dados da tarefa no console (depois vai pro service)
-
-      this.tarefaForm.reset(); // Limpa o formulário após envio
-
-    }
-
+  if (this.tarefaForm.valid) {
+    this.tarefa.adicionarTarefa(this.tarefaForm.value);
+    this.tarefaForm.reset();
   }
-
+}
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';//decorador do angular
+import { Tarefa } from '../../services/tarefa';
 
 @Component({
   selector: 'app-lista-tarefas', // Nome da tag html
@@ -8,15 +9,10 @@ import { Component } from '@angular/core';//decorador do angular
 })
 export class ListaTarefas {
 
-  tarefas = [ // lista temporaria
-    {
-      titulo: 'Exemplo de tarefa',
-      descricao: 'Isso é uma tarefa teste',
-      concluida: false
-    }
-  ];
+  tarefas: any[] = [];
 
-  constructor() {
+  constructor(private tarefa: Tarefa) {
+     this.tarefas = this.tarefa.listarTarefas();
     
   }}
 
