@@ -4,6 +4,7 @@ import { Login } from './pages/login/login';
 import { Cadastro } from './pages/cadastro/cadastro';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { AuthGuard } from './guards/auth-guard';
+import { PainelTarefas } from './pages/painel-tarefas/painel-tarefas';
 
 export const routes: Routes = [
   { path: '', component: Home }, // Rota inicial (Pública)
@@ -13,6 +14,9 @@ export const routes: Routes = [
   // O AuthGuard protege esta rota. Só entra se retornar true!
   { path: 'dashboard', component: Dashboard, canActivate: [AuthGuard] }, 
   
+  // O AuthGuard protege esta rota. Só entra se estiver logado.
+  { path: 'painel-tarefas', component: PainelTarefas, canActivate: [AuthGuard] },
+
   // Redireciona qualquer URL não mapeada para a Home
   { path: '**', redirectTo: '' } 
 ];;

@@ -22,6 +22,11 @@ export class Dashboard implements OnInit {
     this.carregarUsuarios();
   }
 
+  // Navega para o painel de tarefas
+irParaPainelTarefas() {
+  this.router.navigate(['/painel-tarefas']);  // Redireciona o usuário para a rota do painel de tarefas
+}
+
   carregarUsuarios(): void {
     this.authService.listarUsuarios().subscribe({
       next: (dadosDaApi) => {
