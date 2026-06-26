@@ -8,14 +8,20 @@ export class Tarefa {
 
   constructor() {}
 
-  
-  adicionarTarefa(tarefa: any): void { // adiciona uma tarefa no array
-    this.tarefas.push(tarefa);
-  }
-
- 
-  listarTarefas(): any[] { //retrona as tarefas que foram cadastradas 
+    listarTarefas(): any[] {
     return this.tarefas;
   }
+
+  // Adiciona uma nova tarefa no array
+  adicionarTarefa(tarefa: any): void {
+
+  this.tarefas.push({
+    ...tarefa,
+    concluida: false
+  });
+
+  console.log(this.tarefas);
+
+}
 
 }

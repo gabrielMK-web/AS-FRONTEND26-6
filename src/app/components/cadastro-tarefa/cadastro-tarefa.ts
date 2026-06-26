@@ -1,32 +1,45 @@
-import { Component } from '@angular/core'; // Importa o decorator de componente Angular
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'; // Importa ferramentas de formulário reativo
-import { Tarefa } from '../../services/tarefa';
+import { Component } from '@angular/core'; // decorator do Angular
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'; // forms reativos
+import { Tarefa } from '../../services/tarefa'; // service de tarefas
 
 @Component({
-  selector: 'app-cadastro-tarefa', // Tag HTML do componente
-  standalone: true, // Componente independente (Angular novo)
-  imports: [ReactiveFormsModule], // Permite usar formulários reativos no HTML
-  templateUrl: './cadastro-tarefa.html', // Arquivo HTML
-  styleUrls: ['./cadastro-tarefa.css'] // Arquivo CSS
+  selector: 'app-cadastro-tarefa', // seletor do componente
+  standalone: true, // componente independente
+  imports: [ReactiveFormsModule], // habilita forms reativos
+  templateUrl: './cadastro-tarefa.html', // HTML
+  styleUrls: ['./cadastro-tarefa.css'] // CSS
 })
 export class CadastroTarefa {
 
-  tarefaForm: FormGroup; // Cria o formulário da tarefa
+  tarefaForm: FormGroup; // formulário da tarefa
 
-  constructor(private fb: FormBuilder, private tarefa: Tarefa) { // Injeta o FormBuilder para criar formulários
+  constructor(
+    private fb: FormBuilder, // NECESSÁRIO para criar formulário
+    private tarefaService: Tarefa // service das tarefas
+  ) {
 
-    this.tarefaForm = this.fb.group({ // Cria o formulário com campos
-      titulo: ['', Validators.required], // Campo título obrigatório
-      descricao: ['', Validators.required] // Campo descrição obrigatório
+    // cria o formulário
+    this.tarefaForm = this.fb.group({
+      titulo: ['', Validators.required],
+      descricao: ['', Validators.required]
     });
 
   }
 
-  adicionarTarefa() {
+  // adiciona tarefa
+ adicionarTarefa(): void {
 
   if (this.tarefaForm.valid) {
-    this.tarefa.adicionarTarefa(this.tarefaForm.value);
+
+    this.tarefaService.adicionarTarefa(this.tarefaForm.value);
+
     this.tarefaForm.reset();
+
+    // força atualização manual da view da lista
+    this.tarefaService.listarTarefas();
+
   }
+
 }
+
 }
