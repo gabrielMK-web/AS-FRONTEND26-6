@@ -2,19 +2,39 @@
 
   <h3>Minhas Tarefas</h3> <!-- Título -->
 
-  <p *ngIf="tarefas.length === 0"> <!-- ngIf caso não tenha tarefas -->
+   <!-- Exibe esta mensagem caso não exista nenhuma tarefa -->
+  <p *ngIf="tarefas.length === 0">
     Nenhuma tarefa cadastrada
   </p>
 
-  <ul> <!-- Lista de tarefas -->
+  <!-- Lista de tarefas -->
+  <ul>
 
-    <li *ngFor="let tarefa of tarefas"> <!-- ngFor percorre a lista -->
+    <!-- Percorre todas as tarefas cadastradas -->
+    <li *ngFor="let tarefa of tarefas; let i = index">
 
-      <strong>{{ tarefa.titulo }}</strong> <!-- mostra título -->
+      <!-- Exibe o título da tarefa -->
+      <strong>{{ tarefa.titulo }}</strong>
 
-      <p>{{ tarefa.descricao }}</p> <!-- mostra descrição -->
+      <!-- Exibe a descrição da tarefa -->
+      <p>{{ tarefa.descricao }}</p>
 
-      <span *ngIf="tarefa.concluida">Concluída</span> <!-- mostra status -->
+      <!-- Exibe o status caso a tarefa esteja concluída -->
+      <span *ngIf="tarefa.concluida">
+        Concluída
+      </span>
+
+      <br><br>
+
+      <!-- Botão para editar a tarefa -->
+      <button (click)="editar(i)">
+        Editar
+      </button>
+
+      <!-- Botão para excluir a tarefa -->
+      <button (click)="remover(i)">
+        Excluir
+      </button>
 
     </li>
 

@@ -22,6 +22,17 @@ export class Tarefa {
 
   console.log(this.tarefas);
 
-}
 
 }
+
+// Remove uma tarefa pelo índice
+removerTarefa(indice: number): void {
+  this.tarefas.splice(indice, 1);
+}
+
+// Edita uma tarefa pelo índice
+editarTarefa(indice: number, tarefaAtualizada: any): void {
+  this.tarefas[indice] = tarefaAtualizada;
+}
+}
+

@@ -28,6 +28,36 @@ export class ListaTarefas {
   atualizarLista(): void {
     this.carregarTarefas();
   }
+  // Remove uma tarefa
+remover(indice: number): void {
+
+  this.tarefa.removerTarefa(indice);
+
+}
+// Edita uma tarefa que ja existe
+editar(indice: number): void {
+
+  const novoTitulo = prompt(
+    'Novo título:',
+    this.tarefas[indice].titulo
+  );
+
+  const novaDescricao = prompt(
+    'Nova descrição:',
+    this.tarefas[indice].descricao
+  );
+
+  if (novoTitulo && novaDescricao) {
+
+    this.tarefa.editarTarefa(indice, {
+      titulo: novoTitulo,
+      descricao: novaDescricao,
+      concluida: this.tarefas[indice].concluida
+    });
+
+  }
+
+}
 
 }
 
