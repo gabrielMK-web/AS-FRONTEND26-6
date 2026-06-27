@@ -1,0 +1,107 @@
+/* ===========================
+   CADASTRO
+=========================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #eef2ff, #dbeafe);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container */
+.cadastro {
+    max-width: 430px;
+    margin: 70px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.cadastro h2 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+
+/* Formulário */
+.cadastro form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs */
+.cadastro input {
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Focus */
+.cadastro input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 8px rgba(37,99,235,0.3);
+}
+
+/* Botão */
+.cadastro button {
+    padding: 14px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cadastro button:hover:not(:disabled) {
+    background: #15803d;
+    transform: translateY(-2px);
+}
+
+.cadastro button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Erros */
+.cadastro small {
+    color: #dc2626;
+    font-size: 14px;
+}
+
+/* Links */
+.links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.links span {
+    margin: 0 8px;
+    color: #888;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .cadastro {
+        margin: 25px 15px;
+        padding: 25px;
+    }
+}

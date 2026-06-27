@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-dashboard',
   imports: [],
   templateUrl: './dashboard.html',
-  styleUrls: ['./dashboard.css'],
+  styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
  listaDeUsuarios: any[] = [];

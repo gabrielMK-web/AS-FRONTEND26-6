@@ -1,0 +1,58 @@
+/* ===========================
+   PAINEL DE TAREFAS
+=========================== */
+
+/* Container principal */
+.painel-tarefas {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Título */
+.painel-tarefas h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+/* Botão voltar */
+.painel-tarefas button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+/* Hover botão */
+.painel-tarefas button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Separador */
+.painel-tarefas hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 25px 0;
+}
+
+/* Espaçamento dos componentes internos */
+app-cadastro-tarefa {
+    display: block;
+    margin-bottom: 20px;
+}
+
+app-lista-tarefas {
+    display: block;
+}

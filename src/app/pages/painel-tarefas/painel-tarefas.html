@@ -1,15 +1,18 @@
-<div class="painel-tarefas"> 
+<div class="painel-tarefas">
 
-  <h2>Painel de Tarefas</h2> 
-  <!-- Botão para voltar ao Dashboard -->
-   <button (click)="voltarDashboard()">
-    Voltar ao Dashboard
-</button>
+  <h2>Painel de Tarefas</h2>
 
-  <app-cadastro-tarefa></app-cadastro-tarefa> <!-- Componente de adicionar tarefas -->
+  <!-- Botão para voltar ao dashboard -->
+  <button (click)="voltarDashboard()">
+    Voltar ao painel de controle
+  </button>
 
-  <hr> 
+  <!-- Componente de cadastro -->
+  <app-cadastro-tarefa></app-cadastro-tarefa>
 
-  <app-lista-tarefas></app-lista-tarefas> <!-- Componente de listar tarefas -->
+  <hr>
+
+  <!-- Lista -->
+  <app-lista-tarefas></app-lista-tarefas>
 
 </div>

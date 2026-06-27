@@ -1,0 +1,116 @@
+/* ===========================
+   LOGIN
+=========================== */
+
+/* Fundo da página */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #eef2ff, #dbeafe);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container principal */
+div {
+    max-width: 420px;
+    margin: 70px auto;
+    padding: 35px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Campos */
+input {
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Campo selecionado */
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0px 0px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Botão */
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover */
+button:hover:not(:disabled) {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Botão desabilitado */
+button:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Mensagens de erro */
+small {
+    color: #dc2626;
+    font-size: 14px;
+}
+
+/* Links */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Hover dos links */
+a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Área dos links */
+div:last-child {
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+
+    div {
+        margin: 25px 15px;
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+}

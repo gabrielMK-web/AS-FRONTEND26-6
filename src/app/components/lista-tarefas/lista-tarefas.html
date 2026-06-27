@@ -1,11 +1,11 @@
 <div class="lista-tarefas"> <!-- container da lista -->
 
-  <h3>Minhas Tarefas</h3> <!-- Título -->
-
-   <!-- Exibe esta mensagem caso não exista nenhuma tarefa -->
-  <p *ngIf="tarefas.length === 0">
-    Nenhuma tarefa cadastrada
-  </p>
+ <h3>
+  Minhas Tarefas
+  <span *ngIf="tarefas.length > 0">
+    ({{ tarefas.length }})
+  </span>
+</h3>
 
   <!-- Lista de tarefas -->
   <ul>

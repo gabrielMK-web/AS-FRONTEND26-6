@@ -1,0 +1,105 @@
+/* ===========================
+   LISTA DE TAREFAS
+=========================== */
+
+/* Container principal */
+.lista-tarefas {
+    margin-top: 20px;
+}
+
+/* Título */
+.lista-tarefas h3 {
+    color: #1f2937;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Lista */
+.lista-tarefas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Card de tarefa */
+.lista-tarefas li {
+    background: #f9fafb;
+    border-left: 5px solid #2563eb;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+/* Hover no card */
+.lista-tarefas li:hover {
+    transform: translateX(3px);
+    background: #eef2ff;
+}
+
+/* Título da tarefa */
+.lista-tarefas strong {
+    font-size: 18px;
+    color: #111827;
+}
+
+/* Descrição */
+.lista-tarefas p {
+    margin: 5px 0 10px 0;
+    color: #4b5563;
+}
+
+/* Status concluída */
+.lista-tarefas span {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 4px 10px;
+    background: #22c55e;
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* Botões */
+.lista-tarefas button {
+    margin-right: 8px;
+    margin-top: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+/* Editar */
+.lista-tarefas button:first-of-type {
+    background: #f59e0b;
+    color: white;
+}
+
+.lista-tarefas button:first-of-type:hover {
+    background: #d97706;
+}
+
+/* Excluir */
+.lista-tarefas button:last-of-type {
+    background: #ef4444;
+    color: white;
+}
+
+.lista-tarefas button:last-of-type:hover {
+    background: #dc2626;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .lista-tarefas li {
+        padding: 12px;
+    }
+
+    .lista-tarefas button {
+        width: 100%;
+        margin-top: 6px;
+    }
+}
